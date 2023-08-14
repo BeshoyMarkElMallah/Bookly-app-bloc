@@ -1,6 +1,4 @@
 import 'package:bookly_bloc/Features/Splash/presentation/views/widgets/sliding_text.dart';
-import 'package:bookly_bloc/Features/home/presentation/views/home_view.dart';
-import 'package:bookly_bloc/constants.dart';
 import 'package:bookly_bloc/core/utils/app_router.dart';
 import 'package:bookly_bloc/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
