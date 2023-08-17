@@ -3,6 +3,7 @@ import 'package:bookly_bloc/Features/home/presentation/views/widgets/book_rating
 import 'package:bookly_bloc/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly_bloc/constants.dart';
 import 'package:bookly_bloc/core/utils/app_router.dart';
+import 'package:bookly_bloc/core/utils/assets.dart';
 import 'package:bookly_bloc/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,14 +16,15 @@ class BookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
         height: 125,
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                    AssetsData.networkImg),
             const SizedBox(
               width: 30,
             ),
